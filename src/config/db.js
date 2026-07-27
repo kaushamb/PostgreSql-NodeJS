@@ -5,7 +5,7 @@ dotenv.config();
 
 const { Pool }=pkg;
 
-const Pool = new Pool({
+const pool = new Pool({
     user:process.env.DB_USER,
     host:process.env.DB_HOST,
     database:process.env.DB_NAME,
@@ -17,4 +17,4 @@ pool.on("connect",()=>{
     console.log("connection pool established with database");
 })
 
-export default Pool;
+export default pool;
