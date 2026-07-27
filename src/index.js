@@ -2,6 +2,8 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import pool from "./config/db.js"
+import userRoutes from "./routes/userRoutes.js"
+import errorHandler from "./middleware/errorHandler.js";
 
 dotenv.config({quiet : true});
 
@@ -12,8 +14,11 @@ const port = process.env.PORT
 app.use(express.json());
 app.use(cors())
 
-//error handling
+//Routes 
+app.get("/api",userRoutes)
 
+//error handling
+app.use(errorHandler)
 //Testing postgres connection
 app.get("/",async (req,res)=>{
    console.log('start');
