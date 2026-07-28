@@ -19,6 +19,7 @@ app.get("/api",userRoutes)
 
 //error handling
 app.use(errorHandler)
+
 //Testing postgres connection
 app.get("/",async (req,res)=>{
    console.log('start');
