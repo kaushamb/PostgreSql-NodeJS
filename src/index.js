@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors())
 
 //Routes 
-app.get("/api",userRoutes)
+app.use("/api",userRoutes)
 
 //error handling
 app.use(errorHandler)
